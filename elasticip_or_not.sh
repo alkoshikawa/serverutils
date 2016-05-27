@@ -10,5 +10,8 @@ fi
 result=`aws ec2 describe-addresses | grep "$PUBLICIP" | wc -l`
 
 if [ $result -ne 0 ]; then
-  export PS1="\[\033[1;31m\][\u@\h \W]\\$\[\033[0m\] "
+  echo "elasticip use !!"
+  echo 'export PS1="\[\033[1;31m\][\u@\h \W]\\$\[\033[0m\] "'
+else
+  echo "elasticip not use"
 fi
