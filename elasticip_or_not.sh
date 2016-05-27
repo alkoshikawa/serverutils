@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PUBLICIP=`curl --connect-timeout 5 --max-time 10 http://169.254.169.254/latest/meta-data/public-ipv4`
+PUBLICIP=`curl -s --connect-timeout 5 --max-time 10 http://169.254.169.254/latest/meta-data/public-ipv4`
 
 if [ "$PUBLICIP" = "" ]; then
   echo "can't get ip"
